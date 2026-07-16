@@ -1,0 +1,628 @@
+/* ============================================================
+   FOX — Design System
+   Cores e fonte extraídas do CSS computado de foxautomoveis.com
+   (fundo branco, texto #252c2f, destaque vermelho #e10e0e, Inter).
+   Fox Pneus e Rodas usa a mesma cor (confirmado: #d10000 no site
+   deles, quase idêntico) via .brand-fox-pneus.
+   ============================================================ */
+
+:root {
+  /* Cores — extraídas do site oficial da Fox Automóveis */
+  --color-bg: #ffffff;
+  --color-bg-alt: #f7f7f8;
+  --color-surface: #fafbfc;
+  --color-border: #e5e7eb;
+  --color-text: #252c2f;
+  --color-text-muted: #6b7280;
+  --color-accent: #e10e0e;       /* vermelho — Fox Automóveis (confirmado) */
+  --color-accent-contrast: #ffffff;
+
+  /* Tipografia — Unbounded nos títulos (mais autoral/moderno),
+     Inter no corpo (legibilidade, igual ao site oficial) */
+  --font-heading: "Unbounded", "Inter", "Segoe UI", sans-serif;
+  --font-body: "Inter", "Segoe UI", sans-serif;
+
+  /* Layout */
+  --max-width: 1200px;
+  --radius: 10px;
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 2.5rem;
+  --space-5: 4rem;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: 0.01em;
+}
+
+h1 { font-size: clamp(2.2rem, 5vw, 3.6rem); }
+h2 { font-size: clamp(1.6rem, 3.5vw, 2.4rem); margin-bottom: var(--space-3); }
+h3 { font-size: 1.25rem; }
+
+p { color: var(--color-text-muted); max-width: 65ch; }
+
+a { color: var(--color-accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+img { max-width: 100%; display: block; }
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-3);
+}
+
+.section { padding: var(--space-5) 0; }
+.section-alt { background: var(--color-bg-alt); }
+
+/* Sombra suave para blocos com borda se destacarem do fundo branco */
+.card,
+.stats,
+.vehicle-card,
+.featured-vehicle,
+.services-banner {
+  box-shadow: 0 1px 3px rgba(16, 24, 32, 0.05);
+}
+
+/* ---------- Placeholder de conteúdo pendente ---------- */
+.pending {
+  border: 1px dashed #c9a227;
+  background: rgba(201, 162, 39, 0.1);
+  color: #8a6d0a;
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius);
+  font-size: 0.92rem;
+  font-family: var(--font-body);
+}
+.pending::before {
+  content: "⚠ CONTEÚDO PENDENTE — ";
+  font-weight: 700;
+}
+
+/* ---------- Header / Nav ---------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-2) var(--space-3);
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.nav__logo {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: var(--color-text);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.nav__logo span { color: var(--color-accent); }
+.nav__logo img { height: 40px; width: auto; display: block; }
+
+.nav__links {
+  display: flex;
+  gap: var(--space-3);
+  list-style: none;
+}
+.nav__links a {
+  color: var(--color-text);
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+.nav__links a:hover { color: var(--color-accent); text-decoration: none; }
+
+.nav__toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--color-text);
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+@media (max-width: 780px) {
+  .nav__toggle { display: block; }
+  .nav__links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background: var(--color-bg-alt);
+    padding: var(--space-2) var(--space-3);
+    display: none;
+    border-bottom: 1px solid var(--color-border);
+  }
+  .nav__links.is-open { display: flex; }
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  padding: var(--space-5) 0;
+  text-align: center;
+}
+.hero__eyebrow {
+  color: var(--color-accent);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  margin-bottom: var(--space-2);
+}
+.hero p {
+  margin: var(--space-2) auto 0;
+}
+
+/* ---------- Hero banner (home: foto integrada ao fundo, texto sobreposto) ---------- */
+.hero-banner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 460px;
+  height: 62vh;
+  max-height: 640px;
+  overflow: hidden;
+  color: #fff;
+  text-align: center;
+}
+.hero-banner__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.hero-banner__bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  display: block;
+}
+.hero-banner__bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(60% 70% at 50% 45%, rgba(10, 10, 12, 0.78) 0%, rgba(10, 10, 12, 0.55) 55%, rgba(10, 10, 12, 0.35) 100%),
+    linear-gradient(180deg, rgba(10, 10, 12, 0.35) 0%, rgba(10, 10, 12, 0.15) 30%, rgba(10, 10, 12, 0.45) 100%);
+}
+.hero-banner__content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+}
+.hero-banner__text { text-align: center; }
+.hero-banner__text h1 { color: #fff; margin-bottom: var(--space-1); }
+.hero-banner__text .hero__eyebrow { color: var(--color-accent); }
+@media (max-width: 700px) {
+  .hero-banner {
+    height: auto;
+    min-height: 420px;
+  }
+}
+
+/* ---------- Tab-strip (home: Quem sou | Fox Automóveis | Quem somos) ---------- */
+.tab-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-2);
+  margin-top: var(--space-4);
+}
+.tab-strip__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  padding: var(--space-4) var(--space-2);
+  background: var(--color-accent);
+  color: var(--color-accent-contrast);
+  text-align: center;
+  border-radius: var(--radius);
+  box-shadow: 0 2px 6px rgba(225, 14, 14, 0.25);
+}
+.tab-strip__item:hover {
+  box-shadow: 0 16px 32px rgba(225, 14, 14, 0.4);
+  text-decoration: none;
+}
+.tab-strip__label {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--color-accent-contrast);
+}
+.tab-strip__desc {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.85);
+}
+@media (max-width: 700px) {
+  .tab-strip { grid-template-columns: 1fr; }
+  .tab-strip__item { border-left: none; border-top: 1px solid var(--color-border); }
+  .tab-strip__item:first-child { border-top: none; }
+}
+
+/* ---------- Botões ---------- */
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.6rem;
+  border-radius: var(--radius);
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: box-shadow 0.3s ease;
+}
+.btn-primary {
+  background: var(--color-accent);
+  color: var(--color-accent-contrast);
+  box-shadow: 0 2px 6px rgba(225, 14, 14, 0.25);
+}
+.btn-primary:hover {
+  box-shadow: 0 16px 32px rgba(225, 14, 14, 0.4);
+  text-decoration: none;
+}
+.btn-outline {
+  background: transparent;
+  border-color: var(--color-border);
+  color: var(--color-text);
+}
+.btn-outline:hover { border-color: var(--color-accent); color: var(--color-accent); text-decoration: none; }
+
+/* ---------- Cards de navegação (hub) ---------- */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+}
+.card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: var(--space-4);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+.card:hover { transform: translateY(-4px); border-color: var(--color-accent); }
+.card h3 { margin-bottom: var(--space-1); }
+.card p { margin-bottom: var(--space-2); }
+
+/* ---------- Banner de estatísticas ---------- */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: var(--space-3);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: var(--space-4);
+  text-align: center;
+  margin: var(--space-4) 0;
+}
+.stat__value {
+  font-family: var(--font-heading);
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--color-accent);
+}
+.stat__label {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* ---------- Linha do tempo ---------- */
+.timeline {
+  position: relative;
+  max-width: 800px;
+  margin: var(--space-4) auto 0;
+  padding-left: var(--space-4);
+  border-left: 2px solid var(--color-border);
+}
+.timeline__item {
+  position: relative;
+  padding-bottom: var(--space-4);
+}
+.timeline__item::before {
+  content: "";
+  position: absolute;
+  left: calc(-1 * var(--space-4) - 6px);
+  top: 4px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  border: 2px solid var(--color-bg);
+}
+.timeline__year {
+  font-family: var(--font-heading);
+  color: var(--color-accent);
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+/* ---------- Valores / princípios ---------- */
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+}
+.value-card {
+  background: var(--color-accent);
+  color: var(--color-accent-contrast);
+  border-radius: var(--radius);
+  padding: var(--space-3);
+  box-shadow: 0 2px 6px rgba(225, 14, 14, 0.25);
+}
+.value-card:hover {
+  box-shadow: 0 16px 32px rgba(225, 14, 14, 0.4);
+}
+.value-card h3 { color: var(--color-accent-contrast); }
+.value-card p { color: rgba(255, 255, 255, 0.9); }
+
+/* ---------- Equipe ---------- */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+}
+.team-card { text-align: center; }
+.team-card__photo {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: var(--color-surface);
+  border: 1px dashed var(--color-border);
+  margin: 0 auto var(--space-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-muted);
+  font-size: 0.8rem;
+  text-align: center;
+  overflow: hidden;
+}
+.team-card__photo img { width: 100%; height: 100%; object-fit: cover; }
+.team-card__initial {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  background: var(--color-bg-alt);
+  border: 1px solid var(--color-border);
+  margin: 0 auto var(--space-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--color-accent);
+}
+.team-department {
+  margin-top: var(--space-4);
+}
+.team-department > h3 {
+  color: var(--color-accent);
+  font-size: 1.1rem;
+  margin-bottom: var(--space-2);
+}
+.team-card__role {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+/* ---------- Veículos / vitrine ---------- */
+.vehicle-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+}
+.vehicle-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.vehicle-card__img {
+  aspect-ratio: 16 / 10;
+  background: linear-gradient(135deg, var(--color-bg-alt), var(--color-surface));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+}
+.vehicle-card__body { padding: var(--space-3); }
+.vehicle-card__price {
+  color: var(--color-accent);
+  font-weight: 700;
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+}
+
+.featured-vehicle {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: var(--space-4);
+  align-items: center;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-top: var(--space-4);
+}
+.featured-vehicle__img {
+  aspect-ratio: 4 / 3;
+  background: linear-gradient(135deg, var(--color-bg-alt), var(--color-surface));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-muted);
+}
+.featured-vehicle__body { padding: var(--space-4); }
+@media (max-width: 780px) {
+  .featured-vehicle { grid-template-columns: 1fr; }
+}
+
+/* ---------- Serviços (rotativo) ---------- */
+.services-banner {
+  position: relative;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: var(--space-4);
+  margin-top: var(--space-4);
+  overflow: hidden;
+}
+.services-track {
+  display: flex;
+  gap: var(--space-3);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 6px 2px var(--space-2);
+}
+.service-item {
+  scroll-snap-align: start;
+  min-width: 220px;
+  background: var(--color-accent);
+  color: var(--color-accent-contrast);
+  border-radius: var(--radius);
+  padding: var(--space-3);
+  flex: 1 0 auto;
+  box-shadow: 0 2px 6px rgba(225, 14, 14, 0.25);
+}
+.service-item:hover {
+  box-shadow: 0 16px 32px rgba(225, 14, 14, 0.4);
+}
+.service-item h4 { color: var(--color-accent-contrast); margin-bottom: 0.4rem; }
+.service-item p { font-size: 0.9rem; color: rgba(255, 255, 255, 0.9); }
+
+/* ---------- Footer ---------- */
+.site-footer {
+  background: var(--color-bg-alt);
+  border-top: 1px solid var(--color-border);
+  padding: var(--space-4) 0 var(--space-3);
+  margin-top: var(--space-5);
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-3);
+  margin-bottom: var(--space-3);
+}
+.footer-grid h4 { margin-bottom: var(--space-1); font-size: 1rem; }
+.footer-grid ul { list-style: none; }
+.footer-grid a { color: var(--color-text-muted); font-size: 0.9rem; }
+.footer-bottom {
+  border-top: 1px solid var(--color-border);
+  padding-top: var(--space-2);
+  text-align: center;
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+}
+
+/* Utilitários */
+.text-center { text-align: center; }
+.mt-4 { margin-top: var(--space-4); }
+.brand-fox-automoveis { --color-accent: #e10e0e; }
+.brand-fox-pneus { --color-accent: #e10e0e; }
+
+/* ---------- Animações de entrada (scroll reveal) ----------
+   Inspirado no padrão do site de referência: fade + leve deslocamento,
+   0.8s, easing suave, com atraso escalonado via data-delay (ms) para
+   dar efeito de cascata em grupos de itens. */
+[data-animate] {
+  opacity: 0;
+  transition: opacity 0.8s ease, transform 0.8s ease, box-shadow 0.3s ease;
+}
+[data-animate="fade-up"] { transform: translateY(28px); }
+[data-animate="fade-left"] { transform: translateX(-28px); }
+[data-animate="fade-right"] { transform: translateX(28px); }
+[data-animate].is-visible {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-animate] {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ---------- Reviews / avaliações ---------- */
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+}
+.review-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: var(--space-3);
+  box-shadow: 0 1px 3px rgba(16, 24, 32, 0.05);
+}
+.review-card__stars {
+  color: var(--color-accent);
+  letter-spacing: 0.1em;
+  margin-bottom: var(--space-1);
+}
+.review-card__text {
+  font-style: italic;
+  margin-bottom: var(--space-2);
+}
+.review-card__author {
+  font-weight: 600;
+  color: var(--color-text);
+  font-size: 0.9rem;
+}
+.review-card__source {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+.reviews-rating {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-2);
+  justify-content: center;
+  margin-top: var(--space-2);
+  flex-wrap: wrap;
+}
+.reviews-rating strong {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  color: var(--color-accent);
+}
