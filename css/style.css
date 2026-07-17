@@ -257,11 +257,11 @@ img { max-width: 100%; display: block; }
   color: var(--color-accent);
   text-transform: none;
   text-shadow:
-    -1px -1px 2px rgba(255, 255, 255, 0.08),
-    1px -1px 2px rgba(255, 255, 255, 0.08),
-    -1px 1px 2px rgba(255, 255, 255, 0.08),
-    1px 1px 2px rgba(255, 255, 255, 0.08),
-    0 3px 10px rgba(255, 255, 255, 0.08);
+    -1px -1px 2px rgba(255, 255, 255, 0.06),
+    1px -1px 2px rgba(255, 255, 255, 0.06),
+    -1px 1px 2px rgba(255, 255, 255, 0.06),
+    1px 1px 2px rgba(255, 255, 255, 0.06),
+    0 3px 10px rgba(255, 255, 255, 0.06);
 }
 
 /* Fox Automóveis: título no topo da foto (ponta a ponta) + legenda no rodapé */
