@@ -17,10 +17,9 @@
   --color-accent: #e10e0e;       /* vermelho — Fox Automóveis (confirmado) */
   --color-accent-contrast: #ffffff;
 
-  /* Tipografia — Unbounded nos títulos (mais autoral/moderno),
-     Inter no corpo (legibilidade, igual ao site oficial) */
-  --font-heading: "Unbounded", "Inter", "Segoe UI", sans-serif;
-  --font-body: "Inter", "Segoe UI", sans-serif;
+  /* Tipografia — Montserrat em tudo (negrito nos títulos/textos principais) */
+  --font-heading: "Montserrat", "Segoe UI", sans-serif;
+  --font-body: "Montserrat", "Segoe UI", sans-serif;
 
   /* Layout */
   --max-width: 1200px;
@@ -213,15 +212,25 @@ img { max-width: 100%; display: block; }
     radial-gradient(60% 70% at 50% 45%, rgba(10, 10, 12, 0.78) 0%, rgba(10, 10, 12, 0.55) 55%, rgba(10, 10, 12, 0.35) 100%),
     linear-gradient(180deg, rgba(10, 10, 12, 0.35) 0%, rgba(10, 10, 12, 0.15) 30%, rgba(10, 10, 12, 0.45) 100%);
 }
+.hero-banner--graphic .hero-banner__bg::after {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0.1) 40%, rgba(0, 0, 0, 0.35) 100%);
+}
+.hero-banner--graphic .hero-banner__bg img { object-fit: cover; object-position: center; }
 .hero-banner__content {
   position: relative;
   z-index: 1;
   display: flex;
   justify-content: center;
 }
-.hero-banner__text { text-align: center; }
-.hero-banner__text h1 { color: #fff; margin-bottom: var(--space-1); }
-.hero-banner__text .hero__eyebrow { color: var(--color-accent); }
+.hero-banner__text { text-align: center; max-width: 640px; }
+.hero-banner__text h1 { color: #fff; margin-bottom: var(--space-2); font-size: clamp(3rem, 8vw, 5.5rem); }
+.hero-banner__tagline {
+  color: #fff;
+  font-weight: 700;
+  font-size: clamp(1.1rem, 2.4vw, 1.5rem);
+  margin-bottom: var(--space-2);
+}
+.hero-banner__text .hero__eyebrow { color: var(--color-accent); text-transform: none; }
 @media (max-width: 700px) {
   .hero-banner {
     height: auto;
