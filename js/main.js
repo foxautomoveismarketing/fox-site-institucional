@@ -103,25 +103,24 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // ---------- CTA de WhatsApp flutuante e discreta ---------
-  const isPneus = document.body.classList.contains("brand-fox-pneus");
-  const whatsNumber = isPneus ? "5511940360026" : "5519996774677";
-  const whatsBrand = isPneus ? "Fox Pneus e Rodas" : "Fox Automóveis";
-  const fab = document.createElement("a");
-  fab.className = "whatsapp-fab";
-  fab.href = `https://wa.me/${whatsNumber}?text=${encodeURIComponent("Olá! Vim pelo site da Fox e gostaria de mais informações.")}`;
-  fab.target = "_blank";
-  fab.rel = "noopener";
-  fab.setAttribute("aria-label", "Falar no WhatsApp");
-  fab.innerHTML =
-    '<svg class="icon" viewBox="0 0 24 24"><path d="M20.5 3.5A11 11 0 0 0 3.3 17L2 22l5.2-1.3A11 11 0 1 0 20.5 3.5Z"/><path d="M8.5 8.7c.2-.6.5-.6.8-.6h.6c.2 0 .5 0 .7.5.3.7 1 2.2 1 2.4s0 .3-.2.5c-.2.3-.4.4-.6.6-.2.2-.4.4-.2.8.2.4 1 1.6 2.1 2.5 1.4 1.2 2 1.3 2.4 1.3.4 0 .6-.2.8-.5.2-.3.9-1 1.1-1.4.2-.3.5-.3.8-.2.3.1 1.9.9 2.2 1 .3.2.5.2.6.4.1.2.1 1-.3 1.9-.4.9-2 1.7-2.8 1.8-.7.1-1.6.2-5.2-1.1-4.4-1.7-7.1-6.1-7.3-6.4-.2-.3-1.7-2.3-1.7-4.3 0-2.1 1.1-3.1 1.5-3.5Z" fill="#0a0a0c" stroke="none"/></svg>' +
-    `<span class="whatsapp-fab__label"><span>Falar no WhatsApp</span><small>${whatsBrand}</small></span>`;
-  document.body.appendChild(fab);
-  const revealFab = () => {
-    fab.classList.toggle("is-visible", window.scrollY > 200);
-  };
-  window.addEventListener("scroll", revealFab, { passive: true });
-  revealFab();
+  // ---------- CTA de WhatsApp flutuante e discreta (só home e Fox Automóveis) ----------
+  if (document.body.classList.contains("show-whatsapp-fab")) {
+    const fab = document.createElement("a");
+    fab.className = "whatsapp-fab";
+    fab.href = `https://wa.me/5519996774677?text=${encodeURIComponent("Olá! Vim pelo site da Fox e gostaria de mais informações.")}`;
+    fab.target = "_blank";
+    fab.rel = "noopener";
+    fab.setAttribute("aria-label", "Falar no WhatsApp");
+    fab.innerHTML =
+      '<svg class="icon" viewBox="0 0 24 24"><path d="M20.5 3.5A11 11 0 0 0 3.3 17L2 22l5.2-1.3A11 11 0 1 0 20.5 3.5Z"/><path d="M8.5 8.7c.2-.6.5-.6.8-.6h.6c.2 0 .5 0 .7.5.3.7 1 2.2 1 2.4s0 .3-.2.5c-.2.3-.4.4-.6.6-.2.2-.4.4-.2.8.2.4 1 1.6 2.1 2.5 1.4 1.2 2 1.3 2.4 1.3.4 0 .6-.2.8-.5.2-.3.9-1 1.1-1.4.2-.3.5-.3.8-.2.3.1 1.9.9 2.2 1 .3.2.5.2.6.4.1.2.1 1-.3 1.9-.4.9-2 1.7-2.8 1.8-.7.1-1.6.2-5.2-1.1-4.4-1.7-7.1-6.1-7.3-6.4-.2-.3-1.7-2.3-1.7-4.3 0-2.1 1.1-3.1 1.5-3.5Z" fill="#0a0a0c" stroke="none"/></svg>' +
+      '<span class="whatsapp-fab__label"><span>Falar no WhatsApp</span><small>Fox Automóveis</small></span>';
+    document.body.appendChild(fab);
+    const revealFab = () => {
+      fab.classList.toggle("is-visible", window.scrollY > 200);
+    };
+    window.addEventListener("scroll", revealFab, { passive: true });
+    revealFab();
+  }
 
   // ---------- Contadores animados (estatísticas) ----------
   const counters = document.querySelectorAll("[data-count-to]");
