@@ -68,6 +68,19 @@ document.addEventListener("DOMContentLoaded", () => {
     onHeaderScroll();
   }
 
+  // ---------- Barra de progresso de leitura (topo) ----------
+  const progressBar = document.createElement("div");
+  progressBar.className = "scroll-progress";
+  document.body.appendChild(progressBar);
+  const updateProgressBar = () => {
+    const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+    const pct = scrollable > 0 ? (window.scrollY / scrollable) * 100 : 0;
+    progressBar.style.width = pct + "%";
+  };
+  window.addEventListener("scroll", updateProgressBar, { passive: true });
+  window.addEventListener("resize", updateProgressBar);
+  updateProgressBar();
+
   // ---------- Cursor personalizado (tema escuro, mouse fino) ----------
   const hasFinePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
   if (document.body.classList.contains("theme-dark") && hasFinePointer && !reduceMotion) {
@@ -100,6 +113,22 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll("a, button, .card-glass").forEach((el) => {
       el.addEventListener("mouseenter", () => ring.classList.add("is-active"));
       el.addEventListener("mouseleave", () => ring.classList.remove("is-active"));
+    });
+  }
+
+  // ---------- Hero da home: texto reage sutilmente ao mouse (profundidade) ----------
+  const premiumHero = document.querySelector(".hero-banner--premium");
+  if (premiumHero && hasFinePointer && !reduceMotion) {
+    const heroContent = premiumHero.querySelector(".hero-banner__content");
+    heroContent.classList.add("hero-banner__content--tilt");
+    premiumHero.addEventListener("mousemove", (e) => {
+      const rect = premiumHero.getBoundingClientRect();
+      const px = (e.clientX - rect.left) / rect.width - 0.5;
+      const py = (e.clientY - rect.top) / rect.height - 0.5;
+      heroContent.style.transform = `translate(${px * -14}px, ${py * -10}px)`;
+    });
+    premiumHero.addEventListener("mouseleave", () => {
+      heroContent.style.transform = "translate(0, 0)";
     });
   }
 
