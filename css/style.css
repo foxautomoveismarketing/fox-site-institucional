@@ -694,12 +694,12 @@ img { max-width: 100%; display: block; }
 }
 .service-item {
   scroll-snap-align: start;
-  min-width: 220px;
+  width: 220px;
+  flex: 0 0 auto;
   background: var(--color-accent);
   color: var(--color-accent-contrast);
   border-radius: var(--radius);
   padding: var(--space-3);
-  flex: 1 0 auto;
   box-shadow: 0 2px 6px rgba(225, 14, 14, 0.25);
 }
 .service-item:hover {
@@ -707,6 +707,10 @@ img { max-width: 100%; display: block; }
 }
 .service-item h4 { color: var(--color-accent-contrast); margin-bottom: 0.4rem; }
 .service-item p { font-size: 0.9rem; color: rgba(255, 255, 255, 0.9); }
+@media (max-width: 700px) {
+  .services-banner { padding: var(--space-3) var(--space-2); }
+  .service-item { width: 190px; padding: var(--space-2); }
+}
 
 /* ---------- Footer ---------- */
 .site-footer {
