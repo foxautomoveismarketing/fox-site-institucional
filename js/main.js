@@ -7,6 +7,38 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  // ---------- Vitrine de serviços: rolagem automática e contínua ----------
+  document.querySelectorAll(".services-track").forEach((track) => {
+    const items = Array.from(track.children);
+    if (items.length < 2) return;
+    const inner = document.createElement("div");
+    inner.className = "services-track__inner";
+    items.forEach((item) => {
+      item.removeAttribute("data-animate");
+      item.removeAttribute("data-delay");
+      inner.appendChild(item);
+    });
+    items.forEach((item) => inner.appendChild(item.cloneNode(true)));
+    track.innerHTML = "";
+    track.appendChild(inner);
+    track.classList.add("services-track--auto");
+
+    if (reduceMotion) return;
+
+    const setDuration = () => {
+      const speed = 40; // px/s
+      const width = inner.scrollWidth / 2;
+      inner.style.animationDuration = `${Math.max(8, width / speed)}s`;
+    };
+    setDuration();
+    window.addEventListener("resize", setDuration);
+
+    track.addEventListener("touchstart", () => track.classList.add("is-paused"), { passive: true });
+    track.addEventListener("touchend", () => track.classList.remove("is-paused"), { passive: true });
+  });
+
   const animatedEls = document.querySelectorAll("[data-animate]");
   if (animatedEls.length && "IntersectionObserver" in window) {
     const observer = new IntersectionObserver(
@@ -25,8 +57,6 @@ document.addEventListener("DOMContentLoaded", () => {
   } else {
     animatedEls.forEach((el) => el.classList.add("is-visible"));
   }
-
-  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   // ---------- Header: solidifica ao rolar (transparente sobre o hero) ----------
   const header = document.querySelector(".site-header");

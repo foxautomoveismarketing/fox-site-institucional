@@ -672,6 +672,26 @@ img { max-width: 100%; display: block; }
   scroll-snap-type: x mandatory;
   padding: 6px 2px var(--space-2);
 }
+.services-track--auto {
+  overflow: hidden;
+  scroll-snap-type: none;
+}
+.services-track__inner {
+  display: flex;
+  gap: var(--space-3);
+  width: max-content;
+  animation-name: servicesMarquee;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+.services-track--auto:hover .services-track__inner,
+.services-track--auto.is-paused .services-track__inner {
+  animation-play-state: paused;
+}
+@keyframes servicesMarquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
 .service-item {
   scroll-snap-align: start;
   min-width: 220px;
