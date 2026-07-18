@@ -155,11 +155,18 @@ img { max-width: 100%; display: block; }
   border: none;
   color: var(--color-text);
   font-size: 1.6rem;
+  line-height: 1;
   cursor: pointer;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0.4rem;
+  margin: -0.4rem;
+  align-items: center;
+  justify-content: center;
 }
 
 @media (max-width: 780px) {
-  .nav__toggle { display: block; }
+  .nav__toggle { display: flex; }
   .nav__links {
     position: absolute;
     top: 100%;
@@ -323,6 +330,13 @@ img { max-width: 100%; display: block; }
   .hero-banner {
     height: auto;
     min-height: 420px;
+  }
+  /* Sem a margem extra do parallax: no mobile a foto usa a moldura inteira,
+     enquadrando melhor o Jonatas em vez de dar zoom além do necessário. */
+  .hero-banner__bg[data-parallax] {
+    top: 0;
+    bottom: 0;
+    height: 100%;
   }
 }
 
@@ -1011,5 +1025,13 @@ body.theme-dark .vehicle-card:hover {
 .whatsapp-fab__label span { font-size: 0.85rem; font-weight: 600; }
 .whatsapp-fab__label small { font-size: 0.7rem; font-weight: 400; color: rgba(255, 255, 255, 0.65); }
 @media (max-width: 560px) {
-  .whatsapp-fab__label small { display: none; }
+  .whatsapp-fab-stack { right: var(--space-2); bottom: var(--space-2); gap: 0.5rem; }
+  .whatsapp-fab {
+    width: 46px;
+    height: 46px;
+    padding: 0;
+    justify-content: center;
+    border-radius: 50%;
+  }
+  .whatsapp-fab__label { display: none; }
 }

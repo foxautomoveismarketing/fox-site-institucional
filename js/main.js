@@ -196,9 +196,9 @@ document.addEventListener("DOMContentLoaded", () => {
     counters.forEach((el) => counterObserver.observe(el));
   }
 
-  // ---------- Parallax leve (fundos de hero) ----------
+  // ---------- Parallax leve (fundos de hero, desativado no mobile: sem margem extra, foto melhor enquadrada) ----------
   const parallaxEls = document.querySelectorAll("[data-parallax]");
-  if (parallaxEls.length && !reduceMotion) {
+  if (parallaxEls.length && !reduceMotion && window.matchMedia("(min-width: 701px)").matches) {
     let ticking = false;
     function updateParallax() {
       parallaxEls.forEach((el) => {
