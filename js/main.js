@@ -103,54 +103,40 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // ---------- CTA de WhatsApp flutuante e discreta (só home e Fox Automóveis) ----------
+  // ---------- CTAs de WhatsApp flutuantes (só home e Fox Automóveis) ----------
   if (document.body.classList.contains("show-whatsapp-fab")) {
     const whatsappIcon =
-      '<svg class="icon" viewBox="0 0 24 24"><path d="M20.5 3.5A11 11 0 0 0 3.3 17L2 22l5.2-1.3A11 11 0 1 0 20.5 3.5Z"/><path d="M8.5 8.7c.2-.6.5-.6.8-.6h.6c.2 0 .5 0 .7.5.3.7 1 2.2 1 2.4s0 .3-.2.5c-.2.3-.4.4-.6.6-.2.2-.4.4-.2.8.2.4 1 1.6 2.1 2.5 1.4 1.2 2 1.3 2.4 1.3.4 0 .6-.2.8-.5.2-.3.9-1 1.1-1.4.2-.3.5-.3.8-.2.3.1 1.9.9 2.2 1 .3.2.5.2.6.4.1.2.1 1-.3 1.9-.4.9-2 1.7-2.8 1.8-.7.1-1.6.2-5.2-1.1-4.4-1.7-7.1-6.1-7.3-6.4-.2-.3-1.7-2.3-1.7-4.3 0-2.1 1.1-3.1 1.5-3.5Z" fill="#0a0a0c" stroke="none"/></svg>';
+      '<svg class="icon" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413"/></svg>';
 
-    const fab = document.createElement("div");
-    fab.className = "whatsapp-fab";
+    const contacts = [
+      {
+        number: "5519996774677",
+        label: "Vendas",
+        sub: "(19) 99677-4677",
+        msg: "Olá! Vim pelo site da Fox e gostaria de mais informações.",
+      },
+      {
+        number: "5519998746641",
+        label: "Consignação",
+        sub: "(19) 99874-6641",
+        msg: "Olá! Vim pelo site da Fox e gostaria de falar sobre consignação.",
+      },
+    ];
 
-    const toggle = document.createElement("button");
-    toggle.type = "button";
-    toggle.className = "whatsapp-fab__toggle";
-    toggle.setAttribute("aria-label", "Falar no WhatsApp");
-    toggle.setAttribute("aria-expanded", "false");
-    toggle.innerHTML =
-      whatsappIcon + '<span class="whatsapp-fab__label"><span>Falar no WhatsApp</span><small>Fox Automóveis</small></span>';
-
-    const menu = document.createElement("div");
-    menu.className = "whatsapp-fab__menu";
-    menu.innerHTML = `
-      <a class="whatsapp-fab__option" target="_blank" rel="noopener" href="https://wa.me/5519996774677?text=${encodeURIComponent("Olá! Vim pelo site da Fox e gostaria de mais informações.")}">
-        <span>Atendimento geral</span><small>(19) 99677-4677</small>
-      </a>
-      <a class="whatsapp-fab__option" target="_blank" rel="noopener" href="https://wa.me/5519998746641?text=${encodeURIComponent("Olá! Vim pelo site da Fox e gostaria de falar sobre consignação.")}">
-        <span>Consignação</span><small>(19) 99874-6641</small>
-      </a>
-    `;
-
-    fab.append(menu, toggle);
-    document.body.appendChild(fab);
-    setTimeout(() => fab.classList.add("is-visible"), 50);
-
-    toggle.addEventListener("click", (e) => {
-      e.stopPropagation();
-      const isOpen = fab.classList.toggle("is-open");
-      toggle.setAttribute("aria-expanded", String(isOpen));
+    const stack = document.createElement("div");
+    stack.className = "whatsapp-fab-stack";
+    contacts.forEach((c) => {
+      const fab = document.createElement("a");
+      fab.className = "whatsapp-fab";
+      fab.href = `https://wa.me/${c.number}?text=${encodeURIComponent(c.msg)}`;
+      fab.target = "_blank";
+      fab.rel = "noopener";
+      fab.setAttribute("aria-label", `Falar no WhatsApp — ${c.label}`);
+      fab.innerHTML = whatsappIcon + `<span class="whatsapp-fab__label"><span>${c.label}</span><small>${c.sub}</small></span>`;
+      stack.appendChild(fab);
     });
-    document.addEventListener("click", (e) => {
-      if (!fab.contains(e.target)) {
-        fab.classList.remove("is-open");
-        toggle.setAttribute("aria-expanded", "false");
-      }
-    });
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") {
-        fab.classList.remove("is-open");
-        toggle.setAttribute("aria-expanded", "false");
-      }
-    });
+    document.body.appendChild(stack);
+    setTimeout(() => stack.classList.add("is-visible"), 50);
   }
 
   // ---------- Contadores animados (estatísticas) ----------
