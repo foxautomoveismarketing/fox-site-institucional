@@ -15,23 +15,54 @@
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "Organization",
+      "@id": "https://www.foxautomoveis.com/institucional/index.html#organization",
+      "name": "Fox",
+      "alternateName": ["Fox Automóveis", "Fox Pneus e Rodas"],
+      "url": "https://www.foxautomoveis.com/institucional/index.html",
+      "logo": "https://www.foxautomoveis.com/institucional/assets/images/logo-fox.png",
+      "founder": { "@id": "https://www.foxautomoveis.com/institucional/minha-historia.html#jonatas-dias" },
+      "foundingDate": "2013",
+      "foundingLocation": {
+        "@type": "Place",
+        "address": { "@type": "PostalAddress", "addressLocality": "Itu", "addressRegion": "SP", "addressCountry": "BR" }
+      },
+      "subOrganization": [
+        { "@id": "https://www.foxautomoveis.com/institucional/fox-automoveis.html#organization" },
+        { "@id": "https://www.foxautomoveis.com/institucional/fox-pneus-rodas.html#organization" }
+      ],
+      "sameAs": ["https://www.instagram.com/ojonatasdias/"]
+    },
+    {
+      "@type": "WebSite",
+      "url": "https://www.foxautomoveis.com/institucional/",
+      "name": "Fox Automóveis & Fox Pneus e Rodas",
+      "inLanguage": "pt-BR",
+      "publisher": { "@id": "https://www.foxautomoveis.com/institucional/index.html#organization" }
+    },
+    {
       "@type": "Person",
       "@id": "https://www.foxautomoveis.com/institucional/minha-historia.html#jonatas-dias",
       "name": "Jonatas Dias dos Santos",
+      "url": "https://www.foxautomoveis.com/institucional/minha-historia.html",
       "jobTitle": "Fundador",
       "birthPlace": "Indaiatuba, São Paulo, Brasil",
       "homeLocation": "Itu, São Paulo, Brasil",
+      "award": ["Maior Empresário de Indaiatuba", "Melhor Influenciador do ramo automotivo"],
+      "sameAs": ["https://www.instagram.com/ojonatasdias/"],
       "founder": [
         { "@id": "https://www.foxautomoveis.com/institucional/fox-automoveis.html#organization" },
         { "@id": "https://www.foxautomoveis.com/institucional/fox-pneus-rodas.html#organization" }
       ]
     },
     {
-      "@type": "AutomotiveBusiness",
+      "@type": "AutoDealer",
       "@id": "https://www.foxautomoveis.com/institucional/fox-automoveis.html#organization",
       "name": "Fox Automóveis",
+      "url": "https://www.foxautomoveis.com/institucional/fox-automoveis.html",
       "foundingDate": "2013",
       "founder": { "@id": "https://www.foxautomoveis.com/institucional/minha-historia.html#jonatas-dias" },
+      "parentOrganization": { "@id": "https://www.foxautomoveis.com/institucional/index.html#organization" },
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Rua Jacob Lyra, 140 - Parque das Nações",
@@ -44,19 +75,46 @@
       "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": "4.7",
-        "reviewCount": "69"
-      }
+        "reviewCount": "69",
+        "bestRating": "5"
+      },
+      "review": [
+        {
+          "@type": "Review",
+          "author": { "@type": "Person", "name": "Fernando Garcia" },
+          "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+          "reviewBody": "Excelente trabalho deles. Sou cliente e recentemente coloquei meu carro para vender por eles. Em apenas 2 dias eles conseguiram vender meu carro, estou muito satisfeito com o trabalho deles e atendimento do início ao fim.",
+          "publisher": { "@type": "Organization", "name": "Google" }
+        },
+        {
+          "@type": "Review",
+          "author": { "@type": "Person", "name": "Thaina Emanuelle" },
+          "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+          "reviewBody": "Ótimo atendimento, produtos de qualidade com preço acessível! Indico.",
+          "publisher": { "@type": "Organization", "name": "Google" }
+        }
+      ]
     },
     {
       "@type": "AutomotiveBusiness",
       "@id": "https://www.foxautomoveis.com/institucional/fox-pneus-rodas.html#organization",
       "name": "Fox Pneus e Rodas",
+      "url": "https://www.foxautomoveis.com/institucional/fox-pneus-rodas.html",
       "foundingDate": "2013",
       "founder": { "@id": "https://www.foxautomoveis.com/institucional/minha-historia.html#jonatas-dias" },
+      "parentOrganization": { "@id": "https://www.foxautomoveis.com/institucional/index.html#organization" },
       "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": "4.4",
-        "reviewCount": "56"
+        "reviewCount": "56",
+        "bestRating": "5"
+      },
+      "review": {
+        "@type": "Review",
+        "author": { "@type": "Person", "name": "Thiago Luis" },
+        "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+        "reviewBody": "Fiquei impressionado com o atendimento! Todos muito educados, simpáticos e profissionais. Hoje em dia é raro encontrar um serviço com tanta dedicação e cuidado. Parabéns à equipe!",
+        "publisher": { "@type": "Organization", "name": "Google" }
       },
       "address": {
         "@type": "PostalAddress",

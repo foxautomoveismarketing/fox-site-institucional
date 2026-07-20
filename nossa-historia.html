@@ -15,19 +15,44 @@
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "AutomotiveBusiness",
-      "name": "Fox Pneus e Rodas",
-      "foundingDate": "2013",
-      "foundingLocation": "Itu, São Paulo, Brasil",
-      "founder": { "@type": "Person", "name": "Jonatas Dias dos Santos" },
-      "description": "A maior e melhor loja de rodas e pneus de Itu e região, hoje também com unidade em Indaiatuba/SP: rodas, pneus, alinhamento, balanceamento, freios, suspensão, insulfilm e películas PPF."
+      "@type": "Organization",
+      "@id": "https://www.foxautomoveis.com/institucional/index.html#organization",
+      "name": "Fox",
+      "founder": { "@id": "https://www.foxautomoveis.com/institucional/minha-historia.html#jonatas-dias" },
+      "slogan": "Não é sobre carros, é sobre sonhos realizados.",
+      "knowsAbout": ["Veículos premium", "Embelezamento automotivo", "Pneus e rodas", "Consignação de veículos"],
+      "employee": [
+        { "@type": "Person", "name": "Chiara" },
+        { "@type": "Person", "name": "Jorge", "jobTitle": "Gerência" },
+        { "@type": "Person", "name": "Henrique", "jobTitle": "Comercial" },
+        { "@type": "Person", "name": "Felipe", "jobTitle": "Comercial" },
+        { "@type": "Person", "name": "Bárbara", "jobTitle": "Consignação" },
+        { "@type": "Person", "name": "Eliezer", "jobTitle": "Marketing" },
+        { "@type": "Person", "name": "Lucas", "jobTitle": "Marketing" },
+        { "@type": "Person", "name": "Bruna", "jobTitle": "Administrativo" },
+        { "@type": "Person", "name": "Karen", "jobTitle": "Administrativo" },
+        { "@type": "Person", "name": "Mayara", "jobTitle": "Administrativo" },
+        { "@type": "Person", "name": "Douglas", "jobTitle": "Estética" },
+        { "@type": "Person", "name": "Nicolas", "jobTitle": "Estética" },
+        { "@type": "Person", "name": "Guilherme", "jobTitle": "Inteligência Artificial" }
+      ]
     },
     {
       "@type": "AutomotiveBusiness",
+      "@id": "https://www.foxautomoveis.com/institucional/fox-pneus-rodas.html#organization",
+      "name": "Fox Pneus e Rodas",
+      "foundingDate": "2013",
+      "foundingLocation": "Itu, São Paulo, Brasil",
+      "founder": { "@id": "https://www.foxautomoveis.com/institucional/minha-historia.html#jonatas-dias" },
+      "description": "A maior e melhor loja de rodas e pneus de Itu e região, hoje também com unidade em Indaiatuba/SP: rodas, pneus, alinhamento, balanceamento, freios, suspensão, insulfilm e películas PPF."
+    },
+    {
+      "@type": "AutoDealer",
+      "@id": "https://www.foxautomoveis.com/institucional/fox-automoveis.html#organization",
       "name": "Fox Automóveis",
       "foundingDate": "2013",
       "foundingLocation": "Indaiatuba, São Paulo, Brasil",
-      "founder": { "@type": "Person", "name": "Jonatas Dias dos Santos" },
+      "founder": { "@id": "https://www.foxautomoveis.com/institucional/minha-historia.html#jonatas-dias" },
       "description": "Loja de veículos, embarcações e off-road em Indaiatuba/SP, com avaliação, financiamento e suporte pós-venda."
     }
   ]
