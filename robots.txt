@@ -28,4 +28,4 @@ Allow: /
 User-agent: CCBot
 Allow: /
 
-Sitemap: https://www.foxautomoveis.com/institucional/sitemap.xml
+Sitemap: https://foxsiteinstitucional.vercel.app/sitemap.xml
