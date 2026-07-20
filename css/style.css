@@ -1017,10 +1017,10 @@ body.theme-dark .vehicle-card:hover {
 }
 .whatsapp-fab:hover {
   text-decoration: none;
-  border-color: rgba(37, 211, 102, 0.55);
+  border-color: rgba(225, 14, 14, 0.55);
   box-shadow: 0 20px 44px rgba(0, 0, 0, 0.5);
 }
-.whatsapp-fab .icon { width: 1.35rem; height: 1.35rem; color: #25d366; stroke-width: 0; fill: currentColor; flex-shrink: 0; }
+.whatsapp-fab .icon { width: 1.35rem; height: 1.35rem; color: var(--color-accent); flex-shrink: 0; }
 .whatsapp-fab__label { display: flex; flex-direction: column; line-height: 1.15; text-align: left; }
 .whatsapp-fab__label span { font-size: 0.85rem; font-weight: 600; }
 .whatsapp-fab__label small { font-size: 0.7rem; font-weight: 400; color: rgba(255, 255, 255, 0.65); }
