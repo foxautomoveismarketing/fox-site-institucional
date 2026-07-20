@@ -151,34 +151,6 @@ document.addEventListener("DOMContentLoaded", () => {
     setTimeout(() => stack.classList.add("is-visible"), 50);
   }
 
-  // ---------- Contadores animados (estatísticas) ----------
-  const counters = document.querySelectorAll("[data-count-to]");
-  if (counters.length && "IntersectionObserver" in window) {
-    const counterObserver = new IntersectionObserver(
-      (entries, obs) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-          const el = entry.target;
-          const target = parseFloat(el.getAttribute("data-count-to"));
-          const suffix = el.getAttribute("data-count-suffix") || "";
-          const decimals = parseInt(el.getAttribute("data-count-decimals") || "0", 10);
-          const duration = reduceMotion ? 1 : 1600;
-          const start = performance.now();
-          function tick(now) {
-            const p = Math.min(1, (now - start) / duration);
-            const eased = 1 - Math.pow(1 - p, 3);
-            el.textContent = (target * eased).toFixed(decimals).replace(".", ",") + suffix;
-            if (p < 1) requestAnimationFrame(tick);
-          }
-          requestAnimationFrame(tick);
-          obs.unobserve(el);
-        });
-      },
-      { threshold: 0.5 }
-    );
-    counters.forEach((el) => counterObserver.observe(el));
-  }
-
   // ---------- Parallax leve (fundos de hero, desativado no mobile: sem margem extra, foto melhor enquadrada) ----------
   const parallaxEls = document.querySelectorAll("[data-parallax]");
   if (parallaxEls.length && !reduceMotion && window.matchMedia("(min-width: 701px)").matches) {
