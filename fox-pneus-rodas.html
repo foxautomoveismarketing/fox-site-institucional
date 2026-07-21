@@ -13,53 +13,90 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "AutomotiveBusiness",
-  "@id": "https://foxsiteinstitucional.vercel.app/fox-pneus-rodas.html#organization",
-  "name": "Fox Pneus e Rodas",
-  "url": "https://foxsiteinstitucional.vercel.app/fox-pneus-rodas.html",
-  "description": "A maior e melhor loja de rodas e pneus de Itu e região, fundada em 2013: rodas, pneus, alinhamento, balanceamento, freios, suspensão, insulfilm e películas PPF.",
-  "foundingDate": "2013",
-  "logo": "https://foxsiteinstitucional.vercel.app/assets/images/logo-fox.png",
-  "telephone": "+55 11 94036-0026",
-  "email": "foxautomoveisitu@hotmail.com",
-  "location": [
+  "@graph": [
     {
-      "@type": "Place",
-      "name": "Fox Pneus e Rodas - Indaiatuba",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Rua Jacob Lyra, 140 - Parque das Nações",
-        "addressLocality": "Indaiatuba",
-        "addressRegion": "SP",
-        "addressCountry": "BR"
+      "@type": "AutomotiveBusiness",
+      "@id": "https://foxsiteinstitucional.vercel.app/fox-pneus-rodas.html#organization",
+      "name": "Fox Pneus e Rodas",
+      "url": "https://foxsiteinstitucional.vercel.app/fox-pneus-rodas.html",
+      "description": "A maior e melhor loja de rodas e pneus de Itu e região, fundada em 2013: rodas, pneus, alinhamento, balanceamento, freios, suspensão, insulfilm e películas PPF.",
+      "foundingDate": "2013",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://foxsiteinstitucional.vercel.app/assets/images/logo-fox.png",
+        "width": 1653,
+        "height": 470
+      },
+      "telephone": "+55 11 94036-0026",
+      "email": "foxautomoveisitu@hotmail.com",
+      "sameAs": [
+        "https://www.instagram.com/foxrodas/",
+        "https://www.facebook.com/Foxautomoveisitu/",
+        "https://www.foxrodas.com.br/"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "sales",
+        "telephone": "+55 11 94036-0026",
+        "areaServed": "BR",
+        "availableLanguage": "Portuguese"
+      },
+      "location": [
+        {
+          "@type": "Place",
+          "name": "Fox Pneus e Rodas - Indaiatuba",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Rua Jacob Lyra, 140 - Parque das Nações",
+            "addressLocality": "Indaiatuba",
+            "addressRegion": "SP",
+            "postalCode": "13346-010",
+            "addressCountry": "BR"
+          }
+        },
+        {
+          "@type": "Place",
+          "name": "Fox Pneus e Rodas - Itu",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Avenida Doutor Otaviano Pereira Mendes, 263 - Liberdade",
+            "addressLocality": "Itu",
+            "addressRegion": "SP",
+            "postalCode": "13301-000",
+            "addressCountry": "BR"
+          }
+        }
+      ],
+      "founder": { "@id": "https://foxsiteinstitucional.vercel.app/minha-historia.html#jonatas-dias" },
+      "parentOrganization": { "@id": "https://foxsiteinstitucional.vercel.app/index.html#organization" },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.4",
+        "reviewCount": "56",
+        "bestRating": "5"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Serviços Fox Pneus e Rodas",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Rodas" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pneus nacionais e importados" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Alinhamento e balanceamento" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Freios" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Suspensão" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Insulfilm" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Películas PPF" } }
+        ]
       }
     },
     {
-      "@type": "Place",
-      "name": "Fox Pneus e Rodas - Itu",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Itu",
-        "addressRegion": "SP",
-        "addressCountry": "BR"
-      }
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Início", "item": "https://foxsiteinstitucional.vercel.app/index.html" },
+        { "@type": "ListItem", "position": 2, "name": "Fox Pneus e Rodas", "item": "https://foxsiteinstitucional.vercel.app/fox-pneus-rodas.html" }
+      ]
     }
-  ],
-  "founder": { "@id": "https://foxsiteinstitucional.vercel.app/minha-historia.html#jonatas-dias" },
-  "parentOrganization": { "@id": "https://foxsiteinstitucional.vercel.app/index.html#organization" },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.4",
-    "reviewCount": "56",
-    "bestRating": "5"
-  },
-  "makesOffer": {
-    "@type": "Offer",
-    "itemOffered": {
-      "@type": "Service",
-      "name": "Embelezamento automotivo: rodas, pneus, alinhamento, balanceamento, freios, suspensão, repintura de rodas, insulfilm e películas PPF"
-    }
-  }
+  ]
 }
 </script>
 </head>

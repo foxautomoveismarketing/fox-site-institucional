@@ -20,7 +20,12 @@
       "name": "Fox",
       "alternateName": ["Fox Automóveis", "Fox Pneus e Rodas"],
       "url": "https://foxsiteinstitucional.vercel.app/index.html",
-      "logo": "https://foxsiteinstitucional.vercel.app/assets/images/logo-fox.png",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://foxsiteinstitucional.vercel.app/assets/images/logo-fox.png",
+        "width": 1653,
+        "height": 470
+      },
       "founder": { "@id": "https://foxsiteinstitucional.vercel.app/minha-historia.html#jonatas-dias" },
       "foundingDate": "2013",
       "foundingLocation": {
@@ -31,7 +36,28 @@
         { "@id": "https://foxsiteinstitucional.vercel.app/fox-automoveis.html#organization" },
         { "@id": "https://foxsiteinstitucional.vercel.app/fox-pneus-rodas.html#organization" }
       ],
-      "sameAs": ["https://www.instagram.com/ojonatasdias/"]
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "contactType": "sales",
+          "telephone": "+55 19 99677-4677",
+          "areaServed": "BR",
+          "availableLanguage": "Portuguese"
+        },
+        {
+          "@type": "ContactPoint",
+          "contactType": "consignação de veículos",
+          "telephone": "+55 19 99874-6641",
+          "areaServed": "BR",
+          "availableLanguage": "Portuguese"
+        }
+      ],
+      "sameAs": [
+        "https://www.instagram.com/ojonatasdias/",
+        "https://www.instagram.com/foxrodas/",
+        "https://www.facebook.com/Foxautomoveisitu/",
+        "https://www.foxrodas.com.br/"
+      ]
     },
     {
       "@type": "WebSite",
@@ -50,6 +76,8 @@
       "homeLocation": "Itu, São Paulo, Brasil",
       "award": ["Maior Empresário de Indaiatuba", "Melhor Influenciador do ramo automotivo"],
       "sameAs": ["https://www.instagram.com/ojonatasdias/"],
+      "knowsAbout": ["Revenda de veículos", "Avaliação automotiva", "Pneus e rodas", "Embelezamento automotivo"],
+      "worksFor": { "@id": "https://foxsiteinstitucional.vercel.app/index.html#organization" },
       "founder": [
         { "@id": "https://foxsiteinstitucional.vercel.app/fox-automoveis.html#organization" },
         { "@id": "https://foxsiteinstitucional.vercel.app/fox-pneus-rodas.html#organization" }
@@ -68,10 +96,30 @@
         "streetAddress": "Rua Jacob Lyra, 140 - Parque das Nações",
         "addressLocality": "Indaiatuba",
         "addressRegion": "SP",
+        "postalCode": "13346-010",
         "addressCountry": "BR"
       },
       "telephone": "+55 19 3835-3583",
       "email": "foxautomoveisitu@hotmail.com",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "sales",
+        "telephone": "+55 19 99677-4677",
+        "areaServed": "BR",
+        "availableLanguage": "Portuguese"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Serviços Fox Automóveis",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Venda de veículos" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Venda de embarcações" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Venda de off-road (motos, quadriciclos, UTVs)" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Avaliação de veículo" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Financiamento" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Consignação de veículos" } }
+        ]
+      },
       "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": "4.7",
@@ -116,10 +164,32 @@
         "reviewBody": "Fiquei impressionado com o atendimento! Todos muito educados, simpáticos e profissionais. Hoje em dia é raro encontrar um serviço com tanta dedicação e cuidado. Parabéns à equipe!",
         "publisher": { "@type": "Organization", "name": "Google" }
       },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "sales",
+        "telephone": "+55 11 94036-0026",
+        "areaServed": "BR",
+        "availableLanguage": "Portuguese"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Serviços Fox Pneus e Rodas",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Rodas" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pneus nacionais e importados" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Alinhamento e balanceamento" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Freios" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Suspensão" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Insulfilm" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Películas PPF" } }
+        ]
+      },
       "address": {
         "@type": "PostalAddress",
+        "streetAddress": "Avenida Doutor Otaviano Pereira Mendes, 263 - Liberdade",
         "addressLocality": "Itu",
         "addressRegion": "SP",
+        "postalCode": "13301-000",
         "addressCountry": "BR"
       }
     }
