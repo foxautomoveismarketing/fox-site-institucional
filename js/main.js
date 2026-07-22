@@ -9,6 +9,62 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+  // ---------- Carrossel da home: hero + notícias, tela cheia, deslizável (prévia) ----------
+  const homeCarousel = document.querySelector(".home-carousel");
+  if (homeCarousel) {
+    const track = homeCarousel.querySelector(".home-carousel__track");
+    const slides = Array.from(track.children);
+    const dotsContainer = homeCarousel.querySelector(".home-carousel__dots");
+    const prevBtn = homeCarousel.querySelector(".home-carousel__arrow--prev");
+    const nextBtn = homeCarousel.querySelector(".home-carousel__arrow--next");
+
+    slides.forEach((_, i) => {
+      const dot = document.createElement("span");
+      if (i === 0) dot.classList.add("is-active");
+      dot.addEventListener("click", () => {
+        track.scrollTo({ left: track.clientWidth * i, behavior: "smooth" });
+      });
+      dotsContainer.appendChild(dot);
+    });
+    const dots = Array.from(dotsContainer.children);
+
+    function updateActiveDot() {
+      const index = Math.round(track.scrollLeft / track.clientWidth);
+      dots.forEach((d, i) => d.classList.toggle("is-active", i === index));
+    }
+    track.addEventListener("scroll", () => requestAnimationFrame(updateActiveDot), { passive: true });
+
+    function goToSlide(index) {
+      const clamped = (index + slides.length) % slides.length;
+      track.scrollTo({ left: track.clientWidth * clamped, behavior: "smooth" });
+    }
+    function currentIndex() {
+      return Math.round(track.scrollLeft / track.clientWidth);
+    }
+
+    if (prevBtn) prevBtn.addEventListener("click", () => { goToSlide(currentIndex() - 1); resetAutoplay(); });
+    if (nextBtn) nextBtn.addEventListener("click", () => { goToSlide(currentIndex() + 1); resetAutoplay(); });
+    dots.forEach((d) => d.addEventListener("click", resetAutoplay));
+
+    // Avança sozinho a cada alguns segundos; pausa ao passar o mouse ou ao interagir
+    let autoplayTimer = null;
+    function startAutoplay() {
+      if (reduceMotion) return;
+      autoplayTimer = setInterval(() => goToSlide(currentIndex() + 1), 3500);
+    }
+    function stopAutoplay() {
+      clearInterval(autoplayTimer);
+    }
+    function resetAutoplay() {
+      stopAutoplay();
+      startAutoplay();
+    }
+    homeCarousel.addEventListener("mouseenter", stopAutoplay);
+    homeCarousel.addEventListener("mouseleave", startAutoplay);
+    track.addEventListener("touchstart", stopAutoplay, { passive: true });
+    startAutoplay();
+  }
+
   // ---------- Vitrine de serviços: rolagem automática e contínua ----------
   document.querySelectorAll(".services-track").forEach((track) => {
     const items = Array.from(track.children);

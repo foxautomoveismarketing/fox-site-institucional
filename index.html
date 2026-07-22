@@ -197,11 +197,11 @@
 }
 </script>
 </head>
-<body class="theme-dark has-hero-banner show-whatsapp-fab">
+<body class="has-hero-banner show-whatsapp-fab">
 
 <header class="site-header">
   <nav class="nav">
-    <a href="index.html" class="nav__logo"><img src="assets/images/logo-fox-white.png" alt="Fox" /></a>
+    <a href="index.html" class="nav__logo"><img src="assets/images/logo-fox.png" alt="Fox" /></a>
     <button class="nav__toggle" aria-label="Abrir menu">☰</button>
     <ul class="nav__links">
       <li><a href="index.html">Início</a></li>
@@ -213,19 +213,126 @@
 </header>
 
 <main>
-  <section class="hero-banner hero-banner--left hero-banner--premium">
-    <div class="hero-banner__bg" data-parallax="0.12">
-      <img src="assets/images/banner-hero-home.png" alt="Jonatas Dias e equipe Fox Automóveis, com veículos em destaque" />
-      <div class="hero-banner__grain"></div>
+  <section class="home-carousel">
+    <div class="home-carousel__track" id="homeCarouselTrack">
+
+      <section class="hero-banner hero-banner--left hero-banner--premium home-carousel__slide">
+        <div class="hero-banner__bg" data-parallax="0.12">
+          <img src="assets/images/banner-hero-home.png" alt="Jonatas Dias e equipe Fox Automóveis, com veículos em destaque" />
+          <div class="hero-banner__grain"></div>
+        </div>
+        <div class="hero-banner__content container">
+          <div class="hero-banner__text" data-animate="fade-up" data-delay="900">
+            <h1>Fox</h1>
+            <p class="hero-banner__tagline">Não é sobre carros, é sobre sonhos realizados.</p>
+            <span class="hero__eyebrow hero__eyebrow--glass">Quem Sou &amp; Quem Somos</span>
+          </div>
+        </div>
+      </section>
+
+      <a class="news-slide home-carousel__slide" href="blog-post.html">
+        <div class="news-slide__bg"><img src="assets/images/banner-hero-home.png" alt="" /></div>
+        <div class="news-slide__content container">
+          <span class="blog-card__tag">Opinião do Jonatas</span>
+          <h2>Minha visão: por que o atendimento pessoal ainda vence a compra 100% online</h2>
+          <p>Um texto assinado por Jonatas Dias sobre o que aprendeu vendendo carro cara a cara, num mercado cada vez mais digital.</p>
+          <span class="news-slide__cta">Ler matéria →</span>
+        </div>
+      </a>
+
+      <a class="news-slide home-carousel__slide" href="blog.html">
+        <div class="news-slide__bg"><img src="assets/images/blog/bateria-semissolida.jpg" alt="" /></div>
+        <div class="news-slide__content container">
+          <span class="blog-card__tag">Mercado &amp; Notícias</span>
+          <h2>Bateria semissólida: o atalho que pode chegar aos carros elétricos antes do estado sólido</h2>
+          <p>A MG já usa a tecnologia no MG4 Urban Luxury vendido no Brasil — entenda a diferença pra bateria líquida atual e pro estado sólido que só chega entre 2027 e 2030.</p>
+          <span class="news-slide__cta">Ler matéria →</span>
+        </div>
+      </a>
+
+      <a class="news-slide home-carousel__slide" href="blog.html">
+        <div class="news-slide__bg"><img src="assets/images/blog/volvo-ex40-black-edition.jpg" alt="" /></div>
+        <div class="news-slide__content container">
+          <span class="blog-card__tag">Mercado &amp; Notícias</span>
+          <h2>Avaliamos o Volvo EX40 Black Edition: elétrico rápido, seguro e ainda atual</h2>
+          <p>Motor duplo, mais de 400 cv e autonomia de cerca de 400 km — o veredito completo diante da concorrência chinesa mais barata.</p>
+          <span class="news-slide__cta">Ler matéria →</span>
+        </div>
+      </a>
+
+      <a class="news-slide home-carousel__slide" href="blog.html">
+        <div class="news-slide__bg"><img src="assets/images/blog/eletropostos-chatgpt.jpg" alt="" /></div>
+        <div class="news-slide__content container">
+          <span class="blog-card__tag">Mercado &amp; Notícias</span>
+          <h2>Sem Parar adiciona busca de eletropostos e rotas para EVs no ChatGPT</h2>
+          <p>A expansão do portfólio da Sem Parar deixa mais fácil pra quem dirige elétrico encontrar carregador e planejar rota direto pelo ChatGPT.</p>
+          <span class="news-slide__cta">Ler matéria →</span>
+        </div>
+      </a>
+
+      <a class="news-slide home-carousel__slide" href="blog.html">
+        <div class="news-slide__bg"><img src="assets/images/vehicles/gwm-tank.jpeg" alt="" /></div>
+        <div class="news-slide__content container">
+          <span class="blog-card__tag">Mercado &amp; Notícias</span>
+          <h2>Tabela FIPE julho 2026: o que mudou e como isso afeta seu carro usado</h2>
+          <p>As variações do mês e o que elas significam pra quem vai comprar ou vender um veículo agora.</p>
+          <span class="news-slide__cta">Ler matéria →</span>
+        </div>
+      </a>
+
+      <a class="news-slide home-carousel__slide" href="blog.html">
+        <div class="news-slide__bg"><img src="assets/images/vehicles/bmw-530e.jpeg" alt="" /></div>
+        <div class="news-slide__content container">
+          <span class="blog-card__tag">Indaiatuba &amp; Região</span>
+          <h2>Feirão de carros em Indaiatuba: o que esperar do segundo semestre</h2>
+          <p>Datas, condições e o que costuma valer a pena nos feirões da cidade e região.</p>
+          <span class="news-slide__cta">Ler matéria →</span>
+        </div>
+      </a>
+
+      <a class="news-slide home-carousel__slide" href="blog.html">
+        <div class="news-slide__bg"><img src="assets/images/vehicles/bmw-x7.jpeg" alt="" /></div>
+        <div class="news-slide__content container">
+          <span class="blog-card__tag">Guias de Compra</span>
+          <h2>Financiamento com entrada baixa: vale a pena em 2026?</h2>
+          <p>Os prós, os contras e pra quem esse tipo de condição realmente faz sentido.</p>
+          <span class="news-slide__cta">Ler matéria →</span>
+        </div>
+      </a>
+
+      <a class="news-slide home-carousel__slide" href="blog.html">
+        <div class="news-slide__bg"><img src="assets/images/vehicles/land-rover-velar.jpeg" alt="" /></div>
+        <div class="news-slide__content container">
+          <span class="blog-card__tag">Manutenção &amp; Pneus</span>
+          <h2>Pneu de inverno x pneu comum: qual escolher na região de Indaiatuba</h2>
+          <p>O clima daqui pede mesmo um pneu específico? A gente explica.</p>
+          <span class="news-slide__cta">Ler matéria →</span>
+        </div>
+      </a>
+
+      <a class="news-slide news-slide--cta home-carousel__slide" href="blog.html">
+        <div class="news-slide__bg"><img src="assets/images/vehicles/audi-tt-coupe.jpeg" alt="" /></div>
+        <div class="news-slide__content container">
+          <span class="blog-card__tag">Fox em Dia</span>
+          <h2>Veja mais do mundo automotivo com a Fox</h2>
+          <p>Notícias, guias de compra, dicas de manutenção e a visão do Jonatas — tudo em um só lugar.</p>
+          <span class="news-slide__cta">Ver todas as matérias →</span>
+        </div>
+      </a>
+
     </div>
-    <div class="hero-banner__content container">
-      <div class="hero-banner__text" data-animate="fade-up" data-delay="900">
-        <h1>Fox</h1>
-        <p class="hero-banner__tagline">Não é sobre carros, é sobre sonhos realizados.</p>
-        <span class="hero__eyebrow hero__eyebrow--glass">Quem Sou &amp; Quem Somos</span>
-      </div>
-    </div>
+
+    <button class="home-carousel__arrow home-carousel__arrow--prev" type="button" aria-label="Slide anterior">‹</button>
+    <button class="home-carousel__arrow home-carousel__arrow--next" type="button" aria-label="Próximo slide">›</button>
+    <div class="home-carousel__dots" aria-hidden="true"></div>
   </section>
+
+  <div class="home-carousel__follow-cta">
+    <a class="home-carousel__follow-btn" href="blog.html">
+      <svg class="icon" viewBox="0 0 24 24"><path d="M4 5h13a3 3 0 0 1 3 3v11H7a3 3 0 0 1-3-3V5Z"/><path d="M4 5a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3"/><path d="M9 9h7M9 13h5"/></svg>
+      Acompanhe o mundo automotivo com a Fox
+    </a>
+  </div>
 
   <section class="container">
     <nav class="tab-strip" aria-label="Navegação principal">
