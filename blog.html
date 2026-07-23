@@ -23,7 +23,11 @@
     { "@id": "https://foxsiteinstitucional.vercel.app/blog-post.html#article" },
     { "@id": "https://foxsiteinstitucional.vercel.app/blog-bateria-semissolida.html#article" },
     { "@id": "https://foxsiteinstitucional.vercel.app/blog-volvo-ex40.html#article" },
-    { "@id": "https://foxsiteinstitucional.vercel.app/blog-eletropostos-chatgpt.html#article" }
+    { "@id": "https://foxsiteinstitucional.vercel.app/blog-eletropostos-chatgpt.html#article" },
+    { "@id": "https://foxsiteinstitucional.vercel.app/blog-tabela-fipe.html#article" },
+    { "@id": "https://foxsiteinstitucional.vercel.app/blog-financiamento-entrada-baixa.html#article" },
+    { "@id": "https://foxsiteinstitucional.vercel.app/blog-pneu-inverno.html#article" },
+    { "@id": "https://foxsiteinstitucional.vercel.app/blog-carro-premium-acessivel.html#article" }
   ]
 }
 </script>
@@ -55,18 +59,18 @@
 
   <section class="container">
     <div class="blog-filters" data-animate="fade-up">
-      <button class="blog-filter is-active" type="button">Todos</button>
-      <button class="blog-filter" type="button">Mercado &amp; Notícias</button>
-      <button class="blog-filter" type="button">Indaiatuba &amp; Região</button>
-      <button class="blog-filter" type="button">Guias de Compra</button>
-      <button class="blog-filter" type="button">Manutenção &amp; Pneus</button>
-      <button class="blog-filter" type="button">Opinião do Jonatas</button>
+      <button class="blog-filter is-active" type="button" data-filter="Todos">Todos</button>
+      <button class="blog-filter" type="button" data-filter="Mercado &amp; Notícias">Mercado &amp; Notícias</button>
+      <button class="blog-filter" type="button" data-filter="Indaiatuba &amp; Região">Indaiatuba &amp; Região</button>
+      <button class="blog-filter" type="button" data-filter="Guias de Compra">Guias de Compra</button>
+      <button class="blog-filter" type="button" data-filter="Manutenção &amp; Pneus">Manutenção &amp; Pneus</button>
+      <button class="blog-filter" type="button" data-filter="Opinião do Jonatas">Opinião do Jonatas</button>
     </div>
   </section>
 
   <section class="section">
     <div class="container">
-      <a class="blog-featured" href="blog-post.html" data-animate="fade-up">
+      <a class="blog-featured" href="blog-post.html" data-animate="fade-up" data-category="Opinião do Jonatas">
         <div class="blog-featured__img">
           <img src="assets/images/banner-hero-home.png" alt="" />
         </div>
@@ -79,52 +83,60 @@
       </a>
 
       <div class="blog-grid">
-        <a class="blog-card" href="blog-bateria-semissolida.html" data-animate="fade-up">
+        <a class="blog-card" href="blog-bateria-semissolida.html" data-animate="fade-up" data-category="Mercado &amp; Notícias">
           <div class="blog-card__img"><img src="assets/images/blog/bateria-semissolida.jpg" alt="" /></div>
           <span class="blog-card__tag">Mercado &amp; Notícias</span>
           <h3>Bateria semissólida: o atalho que pode chegar aos carros elétricos antes do estado sólido</h3>
           <p>A MG já usa a tecnologia no MG4 Urban Luxury vendido no Brasil — entenda a diferença pra bateria líquida atual e pro estado sólido que só chega entre 2027 e 2030.</p>
           <span class="blog-card__meta">22 de julho de 2026 · fonte: UOL Carros</span>
         </a>
-        <a class="blog-card" href="blog-volvo-ex40.html" data-animate="fade-up" data-delay="50">
+        <a class="blog-card" href="blog-volvo-ex40.html" data-animate="fade-up" data-delay="50" data-category="Mercado &amp; Notícias">
           <div class="blog-card__img"><img src="assets/images/blog/volvo-ex40-black-edition.jpg" alt="" /></div>
           <span class="blog-card__tag">Mercado &amp; Notícias</span>
           <h3>Avaliamos o Volvo EX40 Black Edition: elétrico rápido, seguro e ainda atual</h3>
           <p>Motor duplo, mais de 400 cv e autonomia de cerca de 400 km — o veredito diante da concorrência chinesa mais barata.</p>
           <span class="blog-card__meta">22 de julho de 2026 · fonte: UOL Carros</span>
         </a>
-        <a class="blog-card" href="blog-eletropostos-chatgpt.html" data-animate="fade-up" data-delay="100">
+        <a class="blog-card" href="blog-eletropostos-chatgpt.html" data-animate="fade-up" data-delay="100" data-category="Mercado &amp; Notícias">
           <div class="blog-card__img"><img src="assets/images/blog/eletropostos-chatgpt.jpg" alt="" /></div>
           <span class="blog-card__tag">Mercado &amp; Notícias</span>
           <h3>Sem Parar adiciona busca de eletropostos e rotas para EVs no ChatGPT</h3>
           <p>A expansão do portfólio da Sem Parar deixa mais fácil pra quem dirige elétrico encontrar carregador e planejar rota direto pelo ChatGPT.</p>
           <span class="blog-card__meta">22 de julho de 2026 · fonte: InsideEVs Brasil</span>
         </a>
-        <div class="blog-card blog-card--soon" data-animate="fade-up">
-          <span class="blog-card__tag blog-card__tag--soon">Em breve</span>
-          <h3>Tabela FIPE julho 2026: o que mudou e como isso afeta seu carro usado</h3>
-          <p>As variações do mês e o que elas significam pra quem vai comprar ou vender um veículo agora.</p>
-        </div>
-        <div class="blog-card blog-card--soon" data-animate="fade-up" data-delay="100">
+        <a class="blog-card" href="blog-tabela-fipe.html" data-animate="fade-up" data-category="Mercado &amp; Notícias">
+          <div class="blog-card__img"><img src="assets/images/vehicles/gwm-tank.jpeg" alt="" /></div>
+          <span class="blog-card__tag">Mercado &amp; Notícias</span>
+          <h3>Tabela FIPE: como funciona e o que faz o valor do seu carro variar</h3>
+          <p>Entenda como ela é calculada, com que frequência muda e por que uma avaliação presencial ainda é o jeito mais confiável de saber o preço real do seu carro.</p>
+          <span class="blog-card__meta">23 de julho de 2026</span>
+        </a>
+        <div class="blog-card blog-card--soon" data-animate="fade-up" data-delay="100" data-category="Indaiatuba &amp; Região">
           <span class="blog-card__tag blog-card__tag--soon">Em breve</span>
           <h3>Feirão de carros em Indaiatuba: o que esperar do segundo semestre</h3>
           <p>Datas, condições e o que costuma valer a pena nos feirões da cidade e região.</p>
         </div>
-        <div class="blog-card blog-card--soon" data-animate="fade-up" data-delay="200">
-          <span class="blog-card__tag blog-card__tag--soon">Em breve</span>
+        <a class="blog-card" href="blog-financiamento-entrada-baixa.html" data-animate="fade-up" data-delay="200" data-category="Guias de Compra">
+          <div class="blog-card__img"><img src="assets/images/vehicles/bmw-x7.jpeg" alt="" /></div>
+          <span class="blog-card__tag">Guias de Compra</span>
           <h3>Financiamento com entrada baixa: vale a pena em 2026?</h3>
-          <p>Os prós, os contras e pra quem esse tipo de condição realmente faz sentido.</p>
-        </div>
-        <div class="blog-card blog-card--soon" data-animate="fade-up" data-delay="300">
-          <span class="blog-card__tag blog-card__tag--soon">Em breve</span>
+          <p>Os prós, os contras e pra quem esse tipo de condição realmente faz sentido, com as taxas médias praticadas em 2026.</p>
+          <span class="blog-card__meta">23 de julho de 2026</span>
+        </a>
+        <a class="blog-card" href="blog-pneu-inverno.html" data-animate="fade-up" data-delay="300" data-category="Manutenção &amp; Pneus">
+          <div class="blog-card__img"><img src="assets/images/vehicles/land-rover-velar.jpeg" alt="" /></div>
+          <span class="blog-card__tag">Manutenção &amp; Pneus</span>
           <h3>Pneu de inverno x pneu comum: qual escolher na região de Indaiatuba</h3>
-          <p>O clima daqui pede mesmo um pneu específico? A gente explica.</p>
-        </div>
-        <div class="blog-card blog-card--soon" data-animate="fade-up" data-delay="400">
-          <span class="blog-card__tag blog-card__tag--soon">Em breve</span>
-          <h3>Carro premium x carro acessível: como a Fox atende os dois perfis</h3>
-          <p>Do popular ao importado — o que muda no atendimento e na escolha certa pra cada perfil.</p>
-        </div>
+          <p>O clima daqui pede mesmo um pneu específico? A gente explica por que não, e o que realmente importa.</p>
+          <span class="blog-card__meta">23 de julho de 2026</span>
+        </a>
+        <a class="blog-card" href="blog-carro-premium-acessivel.html" data-animate="fade-up" data-delay="400" data-category="Guias de Compra">
+          <div class="blog-card__img"><img src="assets/images/vehicles/audi-tt-coupe.jpeg" alt="" /></div>
+          <span class="blog-card__tag">Guias de Compra</span>
+          <h3>Carro premium x carro acessível: como escolher o que faz sentido pra você</h3>
+          <p>Manutenção, seguro e depreciação mudam bastante entre um popular e um importado — entenda antes de decidir.</p>
+          <span class="blog-card__meta">23 de julho de 2026</span>
+        </a>
       </div>
     </div>
   </section>

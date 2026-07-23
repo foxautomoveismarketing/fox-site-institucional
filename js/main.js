@@ -280,4 +280,21 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener("resize", updateTimeline);
     updateTimeline();
   }
+
+  // ---------- Filtros do blog ----------
+  const blogFilters = document.querySelectorAll(".blog-filter");
+  if (blogFilters.length) {
+    const blogItems = document.querySelectorAll(".blog-featured[data-category], .blog-card[data-category]");
+    blogFilters.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        blogFilters.forEach((b) => b.classList.remove("is-active"));
+        btn.classList.add("is-active");
+        const filter = btn.getAttribute("data-filter");
+        blogItems.forEach((item) => {
+          const show = filter === "Todos" || item.getAttribute("data-category") === filter;
+          item.style.display = show ? "" : "none";
+        });
+      });
+    });
+  }
 });
