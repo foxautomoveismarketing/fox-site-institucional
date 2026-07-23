@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Crawlers de IA generativa — permitidos de propósito, para maximizar
-# a chance de a Fox Automóveis e a Fox Pneus e Rodas serem citadas em
+# a chance de a Fox Automóveis e a Fox Rodas e Pneus serem citadas em
 # respostas de assistentes de IA (ChatGPT, Perplexity, Claude, Gemini).
 User-agent: GPTBot
 Allow: /

@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const dot = document.createElement("span");
       if (i === 0) dot.classList.add("is-active");
       dot.addEventListener("click", () => {
-        track.scrollTo({ left: track.clientWidth * i, behavior: "smooth" });
+        goToSlide(i);
       });
       dotsContainer.appendChild(dot);
     });
@@ -34,9 +34,17 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     track.addEventListener("scroll", () => requestAnimationFrame(updateActiveDot), { passive: true });
 
+    // Em alguns navegadores o scroll-snap mandatory briga com scrollTo suave
+    // disparado por JS — desativa o snap durante a rolagem e reativa ao terminar.
+    let snapRestoreTimer = null;
     function goToSlide(index) {
       const clamped = (index + slides.length) % slides.length;
+      track.style.scrollSnapType = "none";
       track.scrollTo({ left: track.clientWidth * clamped, behavior: "smooth" });
+      clearTimeout(snapRestoreTimer);
+      snapRestoreTimer = setTimeout(() => {
+        track.style.scrollSnapType = "";
+      }, 600);
     }
     function currentIndex() {
       return Math.round(track.scrollLeft / track.clientWidth);
@@ -61,7 +69,11 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     homeCarousel.addEventListener("mouseenter", stopAutoplay);
     homeCarousel.addEventListener("mouseleave", startAutoplay);
+    // No touch, pausa só durante o toque e retoma sozinho depois — sem isso,
+    // um único toque na tela desligava o autoplay pro resto da visita no celular.
     track.addEventListener("touchstart", stopAutoplay, { passive: true });
+    track.addEventListener("touchend", resetAutoplay, { passive: true });
+    track.addEventListener("touchcancel", resetAutoplay, { passive: true });
     startAutoplay();
   }
 

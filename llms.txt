@@ -1,23 +1,27 @@
-# Fox Automóveis & Fox Pneus e Rodas
+# Fox Automóveis & Fox Rodas e Pneus
 
 > Site institucional com a história de Jonatas Dias dos Santos e das duas empresas que ele
-> fundou: Fox Automóveis (Indaiatuba/SP) e Fox Pneus e Rodas (Itu/SP).
+> fundou, ambas em Itu/SP e hoje também presentes em Indaiatuba/SP: Fox Rodas e Pneus (2013)
+> e Fox Automóveis (2019).
 
 Jonatas Dias dos Santos começou aos 20 anos como estoquista de pneus em uma loja do segmento
 automotivo, evoluiu para vendedor e gerente, e aos 29 anos abriu seu primeiro negócio: a Fox
-Pneus e Rodas, fundada em 2013 em Itu (SP) — a primeira empresa especializada em
-embelezamento automotivo da cidade. Posteriormente fundou também a Fox Automóveis, em
-Indaiatuba (SP).
+Rodas e Pneus, fundada em 2013 em Itu (SP) — a primeira empresa especializada em
+embelezamento automotivo da cidade. Em 2019, fundou também a Fox Automóveis, também em Itu
+(SP). Em 2024, as duas marcas chegaram a Indaiatuba (SP), onde operam hoje no mesmo endereço.
+Jonatas é reconhecido como um dos maiores empresários de Indaiatuba e um dos melhores
+influenciadores do ramo automotivo, com mais de 2 milhões de seguidores em todas as suas
+redes sociais.
 
 ## Empresas
 
-- **Fox Automóveis** — Rua Jacob Lyra, 140, Parque das Nações, Indaiatuba/SP. Loja de
-  veículos, embarcações e off-road (bicicletas, motos, quadriciclos, UTVs), com avaliação de
-  veículos, financiamento e suporte pós-venda. Telefone (19) 3835-3583, WhatsApp
-  (19) 99677-4677, e-mail foxautomoveisitu@hotmail.com.
-- **Fox Pneus e Rodas** — Itu/SP. Fundada em 2013. Rodas, pneus, alinhamento, balanceamento,
-  freios, suspensão, repintura de rodas e insulfilm, atendendo varejo e atacado, com cerca de
-  70% dos produtos importados.
+- **Fox Automóveis** — Fundada em 2019 em Itu/SP, hoje em Rua Jacob Lyra, 140, Parque das
+  Nações, Indaiatuba/SP. Loja de veículos, embarcações e off-road (bicicletas, motos,
+  quadriciclos, UTVs), com avaliação de veículos, financiamento e suporte pós-venda. Telefone
+  (19) 3835-3583, WhatsApp (19) 99677-4677, e-mail foxautomoveisitu@hotmail.com.
+- **Fox Rodas e Pneus** — Fundada em 2013 em Itu/SP, hoje também com unidade em Indaiatuba/SP.
+  Rodas, pneus, alinhamento, balanceamento, freios, suspensão, repintura de rodas e insulfilm,
+  atendendo varejo e atacado, com cerca de 70% dos produtos importados.
 
 ## Páginas
 
@@ -25,7 +29,7 @@ Indaiatuba (SP).
 - [Nossa História](nossa-historia.html): linha do tempo, valores e equipe das duas empresas.
 - [Fox Automóveis](fox-automoveis.html): veículos, embarcações, off-road e serviços da loja de
   Indaiatuba/SP.
-- [Fox Pneus e Rodas](fox-pneus-rodas.html): rodas, pneus e serviços de embelezamento
+- [Fox Rodas e Pneus](fox-pneus-rodas.html): rodas, pneus e serviços de embelezamento
   automotivo da loja de Itu/SP.
 
 ## Observação
